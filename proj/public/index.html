@@ -11,6 +11,14 @@
 <body>
     
     <h1>Voter</h1>
+    <a href="/auth/github">
+       <div class="login">
+            <button id="login">
+                <img src="/public/img/github_32px.png"/>
+            </button>
+        </div> 
+    </a>
+    
     <div class="add-poll">
         <input type="text" id="new-poll-name"/>
         <button id="add-new-poll">Submit</button>
@@ -62,6 +70,8 @@
     <script src="/public/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="/public/js/chart.js"></script>
+    <script src="/common/ajax-functions.js"></script>
     <script src="/controllers/pollController.client.js"></script>
+    <script src="/controllers/userController.client.js"></script>
 </body>
 </html>
