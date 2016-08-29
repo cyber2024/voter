@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    
+    <title>Voter - Vote on whatever, whenever...</title>
+    <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/public/css/styles.css"/>
+    
+</head>
+<body>
+    
+    <h1>Voter</h1>
+    <div class="add-poll">
+        <input type="text" id="new-poll-name"/>
+        <button id="add-new-poll">Submit</button>
+    </div>
+    <hr />
+    
+    <div class="container-fluid">
+        <div class="row">
+            <!--Start poll list col-->
+            <div class="col-xs-4"> 
+                <div class="list">
+                    <ul>
+
+                    </ul>
+                </div>
+            </div>
+            <!--end poll list-->
+            
+            <div class="col-xs-8">
+                <div class="detail-view" hidden>
+                    <div class="row">
+                        <!--start poll options-->
+                        <div class="col-xs-12">
+                            <form>
+                                    <label for="" class="options-item">Vote for...</label>
+                                    <select id="option-selector" class="options-item">
+                                        <option>one</option>
+                                        <option>two</option>
+                                        <option>three</option>
+                                        <option >I'd like a custom option...</option>
+                                    </select>
+                                    <input type="text" id="option-text" class="custom-option-item" hidden/> 
+                                    <button id="custom-submit" class='custom-option-submit' hidden>Submit</button>
+                            </form>
+                        </div>
+                        <!--end poll options-->
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div id="donutchart" style="width: 100%; height: 500px;"></div>
+                        </div>
+                    </div>
+                </div> <!--end detail view-->
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="/public/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="/public/js/chart.js"></script>
+    <script src="/controllers/pollController.client.js"></script>
+</body>
+</html>
