@@ -1,4 +1,5 @@
 var appURL = window.location.origin;
+console.log(appURL);
 
 var ajaxFunctions = {
     ready: function ready(fn){
