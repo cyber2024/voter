@@ -6,7 +6,7 @@
     var addNewPoll = document.querySelector('#add-new-poll');
     var newPollName = document.querySelector('#new-poll-name');
     var list = document.querySelector('.list>ul');
-    var apiUrl = 'https://voter-cyber2024.c9users.io/poll'
+    var apiUrl = 'https://rusty-voter.herokuapp.com/poll'
     var selected = '';
     var pollOptionSelect = '';
     var detailView = document.querySelector('.detail-view');
