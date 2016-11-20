@@ -16,7 +16,7 @@ module.exports = function(app, passport){
         .get(pollHandler.getPolls)
         .post(pollHandler.create)
         .delete(pollHandler.delete)
-        .put(pollHandler.update);
+        .put(pollHandler.vote);
     
     app.route('/auth/github')
         .get(passport.authenticate('github'));
@@ -29,5 +29,8 @@ module.exports = function(app, passport){
             successRedirect: '/',
             failureRedirect: '/'
         }));
+    app.route('/auth/github/logout')
+        .get(userHandler.logout);
+            
     
 }

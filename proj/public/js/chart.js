@@ -1,21 +1,27 @@
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
 
-        var options = {
-          title: 'My Daily Activities',
-          pieHole: 0.4,
-          backgroundColor:"transparent"
-        };
+      
+      var MyChart = {
+        
+        drawChart: function(div, data, options){
+          console.log('div:'+div+'data:'+data+', options:'+options);
+          google.charts.setOnLoadCallback(drawChart(data,options));
+          function drawChart(data, options) {
+            console.log('data:'+data+', options:'+options);
+            
 
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-      }
+            var chart = new google.visualization.PieChart(div);
+            
+            function selectHandler() {
+              var selectedItem = chart.getSelection()[0];
+              if (selectedItem) {
+                var item = data.getValue(selectedItem.row, 0);
+                alert('The user selected ' + item);
+              }
+            }
+    
+            google.visualization.events.addListener(chart, 'select', selectHandler);  
+            chart.draw(data, options);
+          }
+        }
+      };
+      
