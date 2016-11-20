@@ -27,7 +27,7 @@
             console.log("clicked vote");
             ajaxFunctions.ready(ajaxFunctions.ajaxRequest('PUT', apiUrl, function(data){
                 console.log('putting ',data);
-                updateList();
+                pollController.updateData();
             },JSON.stringify({
                 pollId: selected.getAttribute("_id"),
                 pollOptionName: pollOptionSelect
